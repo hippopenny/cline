@@ -70,9 +70,11 @@ export const GlobalFileNames = {
 	clineRules: ".clinerules",
 }
 
+const extensionName = "hippocline";
+
 export class ClineProvider implements vscode.WebviewViewProvider {
-	public static readonly sideBarId = "hippocline.SidebarProvider" // used in package.json as the view's id. This value cannot be changed due to how vscode caches views based on their id, and updating the id would break existing instances of the extension.
-	public static readonly tabPanelId = "hippocline.TabPanelProvider"
+	public static readonly sideBarId = `${extensionName}.SidebarProvider`; // used in package.json as the view's id. This value cannot be changed due to how vscode caches views based on their id, and updating the id would break existing instances of the extension.
+	public static readonly tabPanelId = `${extensionName}.TabPanelProvider`;
 	private static activeInstances: Set<ClineProvider> = new Set()
 	private disposables: vscode.Disposable[] = []
 	private view?: vscode.WebviewView | vscode.WebviewPanel

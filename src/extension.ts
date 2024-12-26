@@ -16,6 +16,8 @@ https://github.com/microsoft/vscode-webview-ui-toolkit-samples/tree/main/framewo
 
 */
 
+const extensionName = "hippocline";
+
 let outputChannel: vscode.OutputChannel
 
 // This method is called when your extension is activated
@@ -35,7 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
 	)
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand("hippocline.plusButtonClicked", async () => {
+		vscode.commands.registerCommand(`${extensionName}.plusButtonClicked`, async () => {
 			outputChannel.appendLine("Plus button Clicked")
 			await sidebarProvider.clearTask()
 			await sidebarProvider.postStateToWebview()
@@ -47,7 +49,7 @@ export function activate(context: vscode.ExtensionContext) {
 	)
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand("hippocline.mcpButtonClicked", () => {
+		vscode.commands.registerCommand(`${extensionName}.mcpButtonClicked`, () => {
 			sidebarProvider.postMessageToWebview({ type: "action", action: "mcpButtonClicked" })
 		}),
 	)
@@ -85,11 +87,11 @@ export function activate(context: vscode.ExtensionContext) {
 		await vscode.commands.executeCommand("workbench.action.lockEditorGroup")
 	}
 
-	context.subscriptions.push(vscode.commands.registerCommand("hippocline.popoutButtonClicked", openClineInNewTab))
-	context.subscriptions.push(vscode.commands.registerCommand("hippocline.openInNewTab", openClineInNewTab))
+	context.subscriptions.push(vscode.commands.registerCommand(`${extensionName}.popoutButtonClicked`, openClineInNewTab))
+	context.subscriptions.push(vscode.commands.registerCommand(`${extensionName}.openInNewTab`, openClineInNewTab))
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand("hippocline.settingsButtonClicked", () => {
+		vscode.commands.registerCommand(`${extensionName}.settingsButtonClicked`, () => {
 			//vscode.window.showInformationMessage(message)
 			sidebarProvider.postMessageToWebview({
 				type: "action",
@@ -99,7 +101,7 @@ export function activate(context: vscode.ExtensionContext) {
 	)
 
 	context.subscriptions.push(
-		vscode.commands.registerCommand("hippocline.historyButtonClicked", () => {
+		vscode.commands.registerCommand(`${extensionName}.historyButtonClicked`, () => {
 			sidebarProvider.postMessageToWebview({ type: "action", action: "historyButtonClicked" })
 		}),
 	)
