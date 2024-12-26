@@ -1,6 +1,6 @@
 {
-	"name": "claude-dev",
-	"displayName": "Cline (prev. Claude Dev)",
+	"name": "hippocline",
+	"displayName": "HippoCline",
 	"description": "Autonomous coding agent right in your IDE, capable of creating/editing files, running commands, using the browser, and more with your permission every step of the way.",
 	"version": "3.0.4",
 	"icon": "assets/icons/icon.png",
@@ -15,7 +15,7 @@
 		"name": "Cline Bot Inc."
 	},
 	"license": "Apache-2.0",
-	"publisher": "saoudrizwan",
+	"publisher": "HippoPenny",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/cline/cline"
@@ -49,49 +49,49 @@
 		"viewsContainers": {
 			"activitybar": [
 				{
-					"id": "claude-dev-ActivityBar",
-					"title": "Cline",
-					"icon": "$(robot)"
+					"id": "hippocline-ActivityBar",
+					"title": "HippoCline",
+					"icon": "$(squirrel)"
 				}
 			]
 		},
 		"views": {
-			"claude-dev-ActivityBar": [
+			"hippocline-ActivityBar": [
 				{
 					"type": "webview",
-					"id": "claude-dev.SidebarProvider",
+					"id": "hippocline.SidebarProvider",
 					"name": ""
 				}
 			]
 		},
 		"commands": [
 			{
-				"command": "cline.plusButtonClicked",
+				"command": "hippocline.plusButtonClicked",
 				"title": "New Task",
 				"icon": "$(add)"
 			},
 			{
-				"command": "cline.mcpButtonClicked",
+				"command": "hippocline.mcpButtonClicked",
 				"title": "MCP Servers",
 				"icon": "$(server)"
 			},
 			{
-				"command": "cline.historyButtonClicked",
+				"command": "hippocline.historyButtonClicked",
 				"title": "History",
 				"icon": "$(history)"
 			},
 			{
-				"command": "cline.popoutButtonClicked",
+				"command": "hippocline.popoutButtonClicked",
 				"title": "Open in Editor",
 				"icon": "$(link-external)"
 			},
 			{
-				"command": "cline.settingsButtonClicked",
+				"command": "hippocline.settingsButtonClicked",
 				"title": "Settings",
 				"icon": "$(settings-gear)"
 			},
 			{
-				"command": "cline.openInNewTab",
+				"command": "hippocline.openInNewTab",
 				"title": "Open In New Tab",
 				"category": "Cline"
 			}
@@ -99,29 +99,29 @@
 		"menus": {
 			"view/title": [
 				{
-					"command": "cline.plusButtonClicked",
+					"command": "hippocline.plusButtonClicked",
 					"group": "navigation@1",
-					"when": "view == claude-dev.SidebarProvider"
+					"when": "view == hippocline.SidebarProvider"
 				},
 				{
-					"command": "cline.mcpButtonClicked",
+					"command": "hippocline.mcpButtonClicked",
 					"group": "navigation@2",
-					"when": "view == claude-dev.SidebarProvider"
+					"when": "view == hippocline.SidebarProvider"
 				},
 				{
-					"command": "cline.historyButtonClicked",
+					"command": "hippocline.historyButtonClicked",
 					"group": "navigation@3",
-					"when": "view == claude-dev.SidebarProvider"
+					"when": "view == hippocline.SidebarProvider"
 				},
 				{
-					"command": "cline.popoutButtonClicked",
+					"command": "hippocline.popoutButtonClicked",
 					"group": "navigation@4",
-					"when": "view == claude-dev.SidebarProvider"
+					"when": "view == hippocline.SidebarProvider"
 				},
 				{
-					"command": "cline.settingsButtonClicked",
+					"command": "hippocline.settingsButtonClicked",
 					"group": "navigation@5",
-					"when": "view == claude-dev.SidebarProvider"
+					"when": "view == hippocline.SidebarProvider"
 				}
 			]
 		}
